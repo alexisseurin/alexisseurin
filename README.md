@@ -6,7 +6,7 @@
 - 🌱 I’m currently learning with the **OpenAI API**
 
 <p align="left">
-<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs?username=alexisseurin&show_icons=true&locale=en&layout=compact" alt="alexisseurin" />
+<img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=alexisseurin&hide_progress=true&langs_count=20&size_weight=0&count_weight=1&exclude_repo=4-Unity-AR,6-Unity-VR-FactoryFrenzy,2-Unity-VR-Tiago-Robot" alt="alexisseurin" />
 </p>
 
 
