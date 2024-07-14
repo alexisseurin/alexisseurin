@@ -1,5 +1,5 @@
 <h1 align="center">Hi 👋, I'm Alexis Seurin</h1>
-<h3 align="center">A passionate backend developer from France</h3>
+<h3 align="center">A passionate engineer from France</h3>
 
 
 - 🔭 I’m currently working on **KrakenD API Gateway**
