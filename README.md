@@ -3,7 +3,7 @@
 
 
 - 🔭 I’m currently working on **KrakenD API Gateway**
-- 🌱 I’m currently learning with the **OpenAI API**
+- 🌱 I’m currently learning **cybersecurity**
 
 <p align="left">
     <a href="https://github.com/alexisseurin">
