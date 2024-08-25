@@ -46,15 +46,14 @@
       </style>
       <div class="container">
         <div class="column">
-          <div class="box h-40"></div>
+          <div class="box h-32"></div>
           <div class="box h-24"></div>
-          <div class="box h-10"></div>
           <div class="box h-16"></div>
         </div>
         <div class="column">
-          <div class="box h-10"></div>
+          <div class="box h-12"></div>
           <div class="box h-52"></div>
-          <div class="box h-10"></div>
+          <div class="box h-8"></div>
         </div>
         <div class="column">
           <div class="box h-64"></div>
