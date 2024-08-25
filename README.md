@@ -1,3 +1,9 @@
+<div style="width: 100%;">
+  <a href="https://github.com/alexisseurin/alexisseurin/blame/main/welcome.svg">
+    <img src="welcome.svg" style="width: 100%;" alt="Click to see the source">
+  </a>
+</div>
+
 <h1 align="center">Hi 👋, I'm Alexis Seurin</h1>
 <h3 align="center">A passionate engineer from France</h3>
 
