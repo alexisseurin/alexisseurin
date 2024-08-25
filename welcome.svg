@@ -23,28 +23,44 @@
           background-color: #161b22;
           padding: 0.75rem;
         }
+        .h-8 { height: 32px; }
+        .h-10 { height: 40px; }
+        .h-12 { height: 48px; }
+        .h-14 { height: 56px; }
+        .h-16 { height: 64px; }
+        .h-20 { height: 80px; }
         .h-24 { height: 96px; }
+        .h-28 { height: 112px; }
         .h-32 { height: 128px; }
+        .h-36 { height: 144px; }
         .h-40 { height: 160px; }
+        .h-44 { height: 176px; }
+        .h-48 { height: 192px; }
+        .h-52 { height: 208px; }
         .h-56 { height: 224px; }
+        .h-60 { height: 240px; }
         .h-64 { height: 256px; }
+        .h-72 { height: 288px; }
+        .h-80 { height: 320px; }
+        .h-96 { height: 384px; }
       </style>
       <div class="container">
         <div class="column">
+          <div class="box h-40"></div>
           <div class="box h-24"></div>
-          <div class="box h-32"></div>
-          <div class="box h-32"></div>
-          <div class="box h-32"></div>
+          <div class="box h-10"></div>
+          <div class="box h-16"></div>
         </div>
         <div class="column">
-          <div class="box h-32"></div>
-          <div class="box h-40"></div>
-          <div class="box h-56"></div>
+          <div class="box h-10"></div>
+          <div class="box h-52"></div>
+          <div class="box h-10"></div>
         </div>
         <div class="column">
           <div class="box h-64"></div>
-          <div class="box h-32"></div>
-          <div class="box h-32"></div>
+          <div class="box h-16"></div>
+          <div class="box h-16"></div>
+          <div class="box h-16"></div>
         </div>
       </div>
     </div>
