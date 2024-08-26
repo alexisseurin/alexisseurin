@@ -23,8 +23,21 @@
           background-color: #161b22;
           padding: 0.75rem;
         }
-        .box-merged {
+
+        .box-small {
+          width: calc(150% - 1rem);
+          gap: 1rem;
+          z-index: 1;
+        }
+
+        .box-medium {
           width: calc(200% - 1rem);
+          gap: 1rem;
+          z-index: 1;
+        }
+      
+        .box-large {
+          width: calc(250% - 1rem);
           gap: 1rem;
           z-index: 1;
         }
@@ -84,7 +97,7 @@
           <div class="box h-24"></div>
           <div class="box h-12"></div>
           <div class="box h-18"></div> 
-        </div>
+        </div> 
         <div class="column">
           <div class="box h-8"></div>
           <div class="box h-24"></div>
@@ -93,8 +106,8 @@
         </div>
         <div class="column">
           <div class="box h-20"></div>
-          <div class="box box-merged h-44"></div>
-          <div class="box box-merged h-8"></div>
+          <div class="box box-medium h-44"></div>
+          <div class="box box-medium h-8"></div>
         </div>
         <div class="column">
           <div class="box h-20"></div>
@@ -102,9 +115,9 @@
           <div class="box h-8"></div>
         </div>
         <div class="column">
-          <div class="box box-merged h-16"></div>
+          <div class="box box-medium h-16"></div>
           <div class="box h-8"></div>
-          <div class="box box-merged h-12"></div>
+          <div class="box box-medium h-12"></div>
           <div class="box h-26"></div>
         </div>
         <div class="column">
