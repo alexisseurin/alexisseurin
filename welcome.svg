@@ -37,6 +37,19 @@
           z-index: 1;
         }
 
+        .box-small-3 {
+          width: calc(120% - 1rem);
+          gap: 1rem;
+          z-index: 1;
+        }
+
+        .box-small-4 {
+          width: calc(60% - 1rem);
+          gap: 1rem;
+          margin-left: 2.25rem;
+          z-index: 1;
+        }
+
         .box-medium {
           width: calc(200% - 1rem);
           gap: 1rem;
@@ -101,13 +114,13 @@
       <div class="container">
         <div class="column">
           <div class="box box-small-1 h-8"></div>
-          <div class="box h-24"></div>
+          <div class="box box-small-3 h-24"></div>
           <div class="box h-12"></div>
           <div class="box h-18"></div> 
         </div> 
         <div class="column">
           <div class="box box-small-2 h-8"></div>
-          <div class="box h-24"></div>
+          <div class="box box-small-4 h-24"></div>
           <div class="box h-12"></div>
           <div class="box h-18"></div> 
         </div>
