@@ -4,7 +4,7 @@
       <style>
         .container {
           display: flex;
-          gap: 0.75rem; /* Adjusted gap to fit the larger dimensions */
+          gap: 0.75rem; 
           height: 100%;
           background-color: #0d1117;
           padding: 0.75rem;
@@ -12,7 +12,7 @@
           color: white;
         }
         .column {
-          flex: 1;
+          flex: 0.5; 
           display: flex;
           flex-direction: column;
           gap: 0.75rem;
@@ -23,6 +23,12 @@
           background-color: #161b22;
           padding: 0.75rem;
         }
+        .box-merged {
+          width: calc(200% - 1rem); /* Largeur ajustée pour occuper deux colonnes avec la marge entre les colonnes */
+        gap: 1rem;
+          z-index: 1;
+        }
+        
         .h-8  { height: 32px; }
         .h-10 { height: 40px; }
         .h-12 { height: 48px; }
@@ -45,7 +51,32 @@
         .h-46 { height: 184px; }
         .h-48 { height: 192px; }
         .h-50 { height: 200px; }
-        .h-52 { height: 208px; }     
+        .h-52 { height: 208px; }   
+        .h-54 { height: 216px; }
+        .h-56 { height: 224px; }
+        .h-58 { height: 232px; }
+        .h-60 { height: 240px; }
+        .h-62 { height: 248px; }
+        .h-64 { height: 256px; }
+        .h-66 { height: 264px; }
+        .h-68 { height: 272px; }
+        .h-70 { height: 280px; }
+        .h-72 { height: 288px; }
+        .h-74 { height: 296px; }
+        .h-76 { height: 304px; }
+        .h-78 { height: 312px; }
+        .h-80 { height: 320px; }
+        .h-82 { height: 328px; }
+        .h-84 { height: 336px; }
+        .h-86 { height: 344px; }
+        .h-88 { height: 352px; }
+        .h-90 { height: 360px; }
+        .h-92 { height: 368px; }
+        .h-94 { height: 376px; }
+        .h-96 { height: 384px; }
+        .h-98 { height: 392px; }
+        .h-100 { height: 400px; }
+
       </style>
       <div class="container">
         <div class="column">
@@ -55,9 +86,26 @@
           <div class="box h-18"></div> 
         </div>
         <div class="column">
+          <div class="box h-8"></div>
+          <div class="box h-24"></div>
+          <div class="box h-12"></div>
+          <div class="box h-18"></div> 
+        </div>
+        <div class="column">
+          <div class="box h-20"></div>
+          <div class="box box-merged h-44"></div>
+          <div class="box h-8"></div>
+        </div>
+        <div class="column">
           <div class="box h-20"></div>
           <div class="box h-44"></div>
           <div class="box h-8"></div>
+        </div>
+        <div class="column">
+          <div class="box h-16"></div>
+          <div class="box h-8"></div>
+          <div class="box h-12"></div>
+          <div class="box h-26"></div>
         </div>
         <div class="column">
           <div class="box h-16"></div>
