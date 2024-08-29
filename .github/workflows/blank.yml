@@ -29,3 +29,9 @@ jobs:
         git add welcome.svg
         git commit -m "Update SVG with latest GitHub data"
         git push
+
+    - name: Push Changes
+      env:
+        GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+      run: |
+        git push https://alexisseurin:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/alexisseurin/alexisseurin.git HEAD:main
