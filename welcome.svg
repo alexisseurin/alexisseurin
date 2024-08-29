@@ -164,7 +164,8 @@
         </div> 
         <div class="column">
           <div class="box box-small-2 h-8"></div>
-          <div class="box box-small-4 h-24"></div>
+          <div class="box box-small-4 h-24"><text x="10" y="20" font-family="Arial" font-size="16" fill="black">GitHub Stars: <tspan id="stars">0</tspan></text>
+    <text x="10" y="50" font-family="Arial" font-size="16" fill="black">Forks: <tspan id="forks">0</tspan></text></div>
           <div class="box h-12"></div>
           <div class="box box-small-6 h-14"></div> 
         </div>
