@@ -1,0 +1,31 @@
+name: Update SVG with GitHub Data
+
+on:
+  schedule:
+    - cron: '0 * * * *' # Chaque heure
+  workflow_dispatch:
+
+jobs:
+  update-svg:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout Repository
+      uses: actions/checkout@v4
+
+    - name: Get GitHub Repo Info
+      id: repo_info
+      run: |
+        STARS=$(curl -s https://api.github.com/repos/alexisseurin | jq .stargazers_count)
+        echo "::set-output name=stars::$STARS"
+
+    - name: Update SVG
+      run: |
+        sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ steps.repo_info.outputs.stars }}<\/tspan>/" path/to/your/file.svg
+    
+    - name: Commit and Push Changes
+      run: |
+        git config --local user.email "alexis.seurin@gmail.com"
+        git config --local user.name "Alexis Seurin"
+        git add welcome.svg
+        git commit -m "Update SVG with latest GitHub data"
+        git push
