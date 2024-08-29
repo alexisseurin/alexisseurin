@@ -33,5 +33,5 @@ jobs:
       env:
         ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
       run: |
-        git remote set-url origin https://alexisseurin:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/alexisseurin/public-transport-map.git
+        git remote set-url origin https://alexisseurin:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/alexisseurin/alexisseurin.git
         git push origin HEAD:main
