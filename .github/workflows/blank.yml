@@ -16,11 +16,11 @@ jobs:
       id: repo_info
       run: |
         STARS=$(curl -s https://api.github.com/repos/alexisseurin | jq .stargazers_count)
-        echo "::set-output name=stars::$STARS"
+        echo "stars=$STARS" >> $GITHUB_ENV
 
     - name: Update SVG
       run: |
-        sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ steps.repo_info.outputs.stars }}<\/tspan>/" path/to/your/file.svg
+        sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ env.stars }}<\/tspan>/" welcome.svg
     
     - name: Commit and Push Changes
       run: |
