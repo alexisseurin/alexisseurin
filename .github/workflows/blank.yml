@@ -15,7 +15,7 @@ jobs:
     - name: Get GitHub Repo Info
       id: repo_info
       run: |
-        STARS=$(curl -s https://api.github.com/repos/alexisseurin | jq .stargazers_count)
+        STARS=$(curl -s https://api.github.com/repos/alexisseurin/public-transport-map | jq .stargazers_count)
         echo "stars=$STARS" >> $GITHUB_ENV
 
     - name: Update SVG
