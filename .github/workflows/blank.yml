@@ -21,17 +21,17 @@ jobs:
     - name: Update SVG
       run: |
         sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ env.stars }}<\/tspan>/" welcome.svg
-    
-    - name: Commit and Push Changes
+
+    - name: Commit Changes
       run: |
         git config --local user.email "alexis.seurin@gmail.com"
         git config --local user.name "Alexis Seurin"
         git add welcome.svg
         git commit -m "Update SVG with latest GitHub data"
-        git push
 
     - name: Push Changes
       env:
-        GITHUB_TOKEN: ${{ secrets.ACTIONS_DEPLOY_KEY }}
+        ACTIONS_DEPLOY_KEY: ${{ secrets.ACTIONS_DEPLOY_KEY }}
       run: |
-        git push https://alexisseurin:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/alexisseurin/alexisseurin.git HEAD:main
+        git remote set-url origin https://alexisseurin:${{ secrets.ACTIONS_DEPLOY_KEY }}@github.com/alexisseurin/public-transport-map.git
+        git push origin HEAD:main
