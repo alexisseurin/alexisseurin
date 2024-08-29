@@ -101,7 +101,7 @@
           z-index: 1;
         }
 
-        .h-4  { height: 16px; }
+        .h-4  { height: 16px; } 
         .h-6  { height: 24px; }
         .h-8  { height: 32px; }
         .h-10 { height: 40px; }
@@ -154,7 +154,9 @@
       </style>
       <div class="container">
         <div class="column">
-          <div class="box box-small-1 h-8"></div>
+          <div class="box box-small-1 h-8"><div class="text-center">
+          23 %
+        </div></div>
           <div class="box box-small-3 h-24"></div>
           <div class="box h-12"></div>
           <div class="box box-small-5 h-14"></div> 
