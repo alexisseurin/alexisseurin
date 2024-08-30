@@ -22,28 +22,28 @@ jobs:
       run: |
         sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ env.stars }}<\/tspan>/" welcome.svg
 
-        - name: Check for changes
-          id: check_changes
-          run: |
-            git config --local user.email "alexis.seurin@gmail.com"
-            git config --local user.name "Alexis Seurin"
-            git add welcome.svg
-            if git diff --cached --exit-code --quiet; then
-              echo "no_changes=true" >> $GITHUB_ENV
-            else
-              echo "no_changes=false" >> $GITHUB_ENV
-            fi
-        
-        - name: Commit Changes
-          if: env.no_changes == 'false'
-          run: |
-            git commit -m "Update SVG with latest GitHub data"
-        
-        - name: Push Changes
-          if: env.no_changes == 'false'
-          env:
-            GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          run: |
-            git push origin HEAD:main
-        
-        
+    - name: Check for changes
+      id: check_changes
+      run: |
+        git config --local user.email "alexis.seurin@gmail.com"
+        git config --local user.name "Alexis Seurin"
+        git add welcome.svg
+        if git diff --cached --exit-code --quiet; then
+          echo "no_changes=true" >> $GITHUB_ENV
+        else
+          echo "no_changes=false" >> $GITHUB_ENV
+        fi
+  
+    - name: Commit Changes
+      if: env.no_changes == 'false'
+      run: |
+        git commit -m "Update SVG with latest GitHub data"
+    
+    - name: Push Changes
+      if: env.no_changes == 'false'
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        git push origin HEAD:main
+    
+    
