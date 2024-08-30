@@ -20,14 +20,14 @@ jobs:
 
     - name: Update SVG
       run: |
-        sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ env.stars }}<\/tspan>/" welcome.svg
+        sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ env.stars }}<\/tspan>/" bento.svg
 
     - name: Check for changes
       id: check_changes
       run: |
         git config --local user.email "alexis.seurin@gmail.com"
         git config --local user.name "Alexis Seurin"
-        git add welcome.svg
+        git add bento.svg
         if git diff --cached --exit-code --quiet; then
           echo "no_changes=true" >> $GITHUB_ENV
         else

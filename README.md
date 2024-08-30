@@ -1,1 +1,1 @@
-![GitHub Statistics](welcome.svg)
+![GitHub README Bento Design](bento.svg)
