@@ -171,14 +171,15 @@
         </div>
         <div class="column">
           <div class="box h-20"></div>
-          <div class="box box-medium h-40"><div class="text-center">
+          <div class="box box-medium h-40">
+          <div class="text-center">
           🗒️ <tspan id="project">Project</tspan> 
-      
-        </div></div>
+        </div>
+        </div>
           <div class="box box-medium h-8"></div>
         </div>
         <div class="column">
-          <div class="box h-20"></div>
+          <div class="box h-20">Commits 🗃️ <tspan id="stars">1</tspan> </div>
           <div class="box h-40"></div>
           <div class="box h-8"></div>
         </div>
