@@ -101,6 +101,10 @@
           z-index: 1;
         }
 
+        .above {
+          z-index: 2;
+        }
+
         .h-4  { height: 16px; } 
         .h-6  { height: 24px; }
         .h-8  { height: 32px; }
@@ -160,7 +164,7 @@
           <div class="box box-small-3 h-24"><div class="text-center">React</div><div class="text-center"></div></div>
           <div class="box h-12">Languages FR / EN
           </div>
-          <div class="box box-small-5 h-14">Hobby</div> 
+          <div class="box box-small-5 h-14">Docker</div> 
         </div> 
         <div class="column">
           <div class="box box-small-2 h-8"><div class="text-center">
@@ -178,28 +182,32 @@
         </div><tspan id="project_name">Project Name </tspan><tspan id="github_link">[GitHub Link]</tspan>
        
         </div>
-          <div class="box box-medium h-8"><div class="text-center">C# / Python</div></div>
+          <div class="box box-medium h-8">
+            <div class="text-center">C# / Python</div>
+          </div>
         </div>
         <div class="column">
-          <div class="box h-20">Commits <div class="text-center">🗃️ <tspan id="commits">1</tspan> </div> </div>
+          <div class="box h-20">Commits  
+          <div class="text-center">🗃️ <tspan id="commits">1</tspan> </div> 
+          </div>
           <div class="box h-40"></div>
           <div class="box h-8"></div>
         </div>
         <div class="column-3">
-          <div class="box box-large h-16">GitHub Stats</div>
-          <div class="box box-medium h-8">Email</div>
-          <div class="box box-large h-12">Frameworks</div>
-          <div class="box h-22">Docker</div>
-        </div>
-        <div class="column-3">
-          <div class="box h-16"></div>
-          <div class="box h-8"></div>
-          <div class="box h-12"></div>
+          <div class="box box-large h-16">Git stats</div>
+          <div class="box box-medium h-8">:)</div>
+          <div class="box box-large h-12">Tools</div>
           <div class="box h-22">MVC</div>
         </div>
         <div class="column-3">
           <div class="box h-16"></div>
           <div class="box h-8"></div>
+          <div class="box h-12"></div>
+          <div class="box h-22">IaC</div>
+        </div>
+        <div class="column-3">
+          <div class="box h-16"></div>
+          <div class="box h-8">Email</div>
           <div class="box h-12"></div>
           <div class="box h-22">IoT</div>
         </div>
