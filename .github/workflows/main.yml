@@ -15,12 +15,34 @@ jobs:
     - name: Get GitHub Repo Info
       id: repo_info
       run: |
-        STARS=$(curl -s https://api.github.com/repos/alexisseurin/public-transport-map | jq .stargazers_count)
-        echo "stars=$STARS" >> $GITHUB_ENV
+        # Get all repositories
+        REPOS=$(curl -s https://api.github.com/users/alexisseurin/repos | jq -r '.[].name')
+
+        # Initialize counters
+        TOTAL_STARS=0
+        TOTAL_COMMITS=0
+
+        # Loop through each repository to get stars and commits
+        for REPO in $REPOS; do
+          # Get stars count for the current repo
+          STARS=$(curl -s https://api.github.com/repos/alexisseurin/$REPO | jq .stargazers_count)
+          TOTAL_STARS=$((TOTAL_STARS + STARS))
+
+          # Get commits count for the current repo
+          COMMITS=$(curl -s https://api.github.com/repos/alexisseurin/$REPO/commits?per_page=1 | jq -r '.[0].sha' | xargs -I {} curl -s -I https://api.github.com/repos/alexisseurin/$REPO/git/commits/{} | grep -i 'x-oauth-scopes:' | cut -d ' ' -f2)
+          TOTAL_COMMITS=$((TOTAL_COMMITS + COMMITS))
+        done
+
+        # Export environment variables
+        echo "stars=$TOTAL_STARS" >> $GITHUB_ENV
+        echo "commits=$TOTAL_COMMITS" >> $GITHUB_ENV
 
     - name: Update SVG
       run: |
+        # Update stars in SVG
         sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ env.stars }}<\/tspan>/" bento.svg
+        # Update commits in SVG
+        sed -i "s/<tspan id=\"commits\">.*<\/tspan>/<tspan id=\"commits\">${{ env.commits }}<\/tspan>/" bento.svg
 
     - name: Check for changes
       id: check_changes
@@ -45,5 +67,3 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         git push origin HEAD:main
-    
-    
