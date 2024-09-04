@@ -28,14 +28,15 @@ jobs:
           STARS=$(curl -s https://api.github.com/repos/$REPO | jq .stargazers_count)
           TOTAL_STARS=$((TOTAL_STARS + STARS))
 
-          # Get the number of commits in the default branch of the current repo
-          COMMITS=$(curl -s https://api.github.com/repos/$REPO | jq '. | .default_branch' | xargs -I {} curl -s https://api.github.com/repos/$REPO/commits?per_page=1\&sha={} | jq -r '.[0].commit.tree.sha' | xargs -I {} curl -s https://api.github.com/repos/$REPO/git/trees/{}?recursive=1 | jq '.tree | length')
+          # Get the total number of commits in the default branch
+          COMMITS=$(curl -s https://api.github.com/repos/$REPO | jq .commits_url | sed 's/{\/sha}//' | xargs -I {} curl -s {} | jq length)
           TOTAL_COMMITS=$((TOTAL_COMMITS + COMMITS))
         done
 
         # Export environment variables
         echo "stars=$TOTAL_STARS" >> $GITHUB_ENV
         echo "commits=$TOTAL_COMMITS" >> $GITHUB_ENV
+
 
     - name: Update SVG
       run: |
