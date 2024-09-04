@@ -16,7 +16,7 @@ jobs:
       id: repo_info
       run: |
         # Get all repositories
-        REPOS=$(curl -s https://api.github.com/users/alexisseurin/repos | jq -r '.[].name')
+        REPOS=$(curl -s https://api.github.com/users/alexisseurin/repos | jq -r '.[].full_name')
 
         # Initialize counters
         TOTAL_STARS=0
@@ -25,11 +25,11 @@ jobs:
         # Loop through each repository to get stars and commits
         for REPO in $REPOS; do
           # Get stars count for the current repo
-          STARS=$(curl -s https://api.github.com/repos/alexisseurin/$REPO | jq .stargazers_count)
+          STARS=$(curl -s https://api.github.com/repos/$REPO | jq .stargazers_count)
           TOTAL_STARS=$((TOTAL_STARS + STARS))
 
-          # Get commits count for the current repo
-          COMMITS=$(curl -s https://api.github.com/repos/alexisseurin/$REPO/commits?per_page=1 | jq -r '.[0].sha' | xargs -I {} curl -s -I https://api.github.com/repos/alexisseurin/$REPO/git/commits/{} | grep -i 'x-oauth-scopes:' | cut -d ' ' -f2)
+          # Get the number of commits in the default branch of the current repo
+          COMMITS=$(curl -s https://api.github.com/repos/$REPO | jq '. | .default_branch' | xargs -I {} curl -s https://api.github.com/repos/$REPO/commits?per_page=1\&sha={} | jq -r '.[0].commit.tree.sha' | xargs -I {} curl -s https://api.github.com/repos/$REPO/git/trees/{}?recursive=1 | jq '.tree | length')
           TOTAL_COMMITS=$((TOTAL_COMMITS + COMMITS))
         done
 
@@ -40,16 +40,16 @@ jobs:
     - name: Update SVG
       run: |
         # Update stars in SVG
-        sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ env.stars }}<\/tspan>/" bento.svg
+        sed -i "s/<tspan id=\"stars\">.*<\/tspan>/<tspan id=\"stars\">${{ env.stars }}<\/tspan>/" ../bento.svg
         # Update commits in SVG
-        sed -i "s/<tspan id=\"commits\">.*<\/tspan>/<tspan id=\"commits\">${{ env.commits }}<\/tspan>/" bento.svg
+        sed -i "s/<tspan id=\"commits\">.*<\/tspan>/<tspan id=\"commits\">${{ env.commits }}<\/tspan>/" ../bento.svg
 
     - name: Check for changes
       id: check_changes
       run: |
         git config --local user.email "alexis.seurin@gmail.com"
         git config --local user.name "Alexis Seurin"
-        git add bento.svg
+        git add ../bento.svg
         if git diff --cached --exit-code --quiet; then
           echo "no_changes=true" >> $GITHUB_ENV
         else
