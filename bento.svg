@@ -122,6 +122,53 @@
           z-index: 2;
         }
 
+        .hi {
+          animation: hi 1.5s linear -0.5s infinite;
+          display: inline-block;
+          transform-origin: 70% 70%;
+        }
+
+        .container-color {
+          background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+          background-size: 400% 400%;
+          animation: gradient 15s ease infinite;
+        }
+
+        @keyframes gradient {
+          0% {
+            background-position: 0% 50%;
+          }
+          50% {
+            background-position: 100% 50%;
+          }
+          100% {
+            background-position: 0% 50%;
+          }
+        }
+
+
+        @media (prefers-reduced-motion) {
+          .container-color {
+            animation: none;
+          }
+
+          .hi {
+            animation: none;
+          }
+        }
+
+        @keyframes hi  {
+            0% { transform: rotate( 0.0deg) }
+           10% { transform: rotate(14.0deg) }
+           20% { transform: rotate(-8.0deg) }
+           30% { transform: rotate(14.0deg) }
+           40% { transform: rotate(-4.0deg) }
+           50% { transform: rotate(10.0deg) }
+           60% { transform: rotate( 0.0deg) }
+          100% { transform: rotate( 0.0deg) }
+        }
+
+
         .h-4  { height: 16px; } 
         .h-6  { height: 24px; }
         .h-8  { height: 32px; }
@@ -194,8 +241,8 @@
           <div class="box box-small-6 h-14"><div class="text-center">LinkedIn</div></div> 
         </div>
         <div class="column">
-          <div class="box h-20">IT engineer 24 yo</div>
-          <div class="box box-medium h-40">
+          <div class="box h-20"><div class="text-center">Hello <div class="hi">👋</div>  </div></div>
+          <div class="box box-medium h-40 container-color">
           <div class="text-center">
           🗒️ Project 
         </div><tspan id="project_name">Project Name </tspan><tspan id="github_link">[GitHub Link]</tspan>
