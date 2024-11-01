@@ -32,7 +32,6 @@
         .text-center {
           text-align: center;
           font-size: 24px;
-          font-weight: 700;
         }
 
         img {
@@ -261,7 +260,7 @@
         </div>
         <div class="column-3">
           <div class="box box-large h-16">Git stats</div>
-          <div class="box box-medium h-8">...</div>
+          <div class="box box-medium h-8">Agile</div>
           <div class="box box-large h-12">Tools</div>
           <div class="box h-22">MVC</div>
         </div>
