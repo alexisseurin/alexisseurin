@@ -245,7 +245,7 @@
         <div class="column">
           <div class="box box-small-2 h-8"><div class="text-center">
           6 y. exp</div></div>
-          <div class="box box-small-4 h-24"><div class="text-center">Stars ⭐ <tspan id="stars">3</tspan></div> 
+          <div class="box box-small-4 h-24"><div class="text-center">Stars ⭐ <tspan id="stars">7</tspan></div> 
           </div>
           <div class="box h-12">KrakenD</div>
           <div class="box box-small-6 h-14"><div class="text-center">DevOps</div></div> 
@@ -265,7 +265,7 @@
         </div>
         <div class="column">
           <div class="box h-20">Commits  
-          <div class="text-center">🗃️ <tspan id="commits">156</tspan> </div> 
+          <div class="text-center">🗃️ <tspan id="commits">208</tspan> </div> 
           </div>
           <div class="box h-40"></div>
           <div class="box h-8"></div>
