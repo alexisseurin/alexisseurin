@@ -2,7 +2,7 @@ name: Update SVG with GitHub Data
 
 on:
   schedule:
-    - cron: '0 8 * * *'
+    - cron: '0 8 1 1 *'
   workflow_dispatch:
 
 jobs:
@@ -36,6 +36,7 @@ jobs:
         # Export environment variables
         echo "stars=$TOTAL_STARS" >> $GITHUB_ENV
         echo "commits=$TOTAL_COMMITS" >> $GITHUB_ENV
+        echo "OK"
 
 
     - name: Update SVG
