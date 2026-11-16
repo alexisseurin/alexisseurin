@@ -1,1 +1,1 @@
-![GitHub README Bento Design](bento.svg)
+![GitHub README Bento Design](new_bento.svg)
